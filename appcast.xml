@@ -13,12 +13,7 @@
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
       <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
       <description sparkle:format="markdown"><![CDATA[
-- Update checks now go through a small server that counts them, so it is finally possible
-  to see how many copies of December are out there and which version each one runs.
-- Nothing personal is sent. The app adds only its build number, the macOS version and the
-  CPU type, and the server hashes the IP with a secret salt instead of storing it.
-- No analytics SDK, no tracking identifier, no crash reporting — the app behaves exactly
-  as before, it just says hello when it checks for updates.
+- Fixed a handful of bugs and made a few quiet improvements under the hood.
 ]]></description>
       <enclosure url="https://github.com/krl-sta/December-updates/releases/download/1.0.74/December-1.0-74-arm64.dmg"
                  sparkle:edSignature="Ec6yipjSjJ+OxIJNigUjxiILSqkhwJwutWpzyFnuYYOzAyzajZApPLVu/t5Fj1HjxNRIGGi43FiTUt16GbmaCw=="
