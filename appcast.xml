@@ -6,28 +6,21 @@
     <description>December release feed</description>
     <language>en</language>
     <item>
-      <title>December 1.0 (72)</title>
-      <pubDate>Fri, 30 Oct 2026 21:24:03 +0000</pubDate>
-      <sparkle:version>72</sparkle:version>
+      <title>December 1.0 (73)</title>
+      <pubDate>Sat, 31 Oct 2026 01:00:07 +0000</pubDate>
+      <sparkle:version>73</sparkle:version>
       <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
       <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
       <description sparkle:format="markdown"><![CDATA[
-- The preview now stays open as you move through a folder and switches to whatever is
-  selected — a note, a photo, a PDF or a folder — instead of disappearing the moment the
-  cursor leaves Markdown. It behaves like Finder's preview pane.
-- Markdown opened in Quick View is rendered as a document: headings, tables and
-  highlighted code, not raw source.
-- The outline in the Markdown preview is off by default. The toolbar button opens it
-  when you want it, and it stays closed for every new document.
-- Selecting text in the preview shows the system highlight, so what you are about to
-  copy is always visible, whatever the theme.
-- Tab steps out of a preview back to the file list, and Esc closes it — the same on
-  every preview surface.
+- The disk image now opens as a proper install window: the winter artwork fills the
+  frame, December sits on the left and Applications on the right, with an arrow between
+  them. Drag the app across to install.
+- Nothing else changed in this build.
 ]]></description>
-      <enclosure url="https://github.com/krl-sta/December-updates/releases/download/1.0.72/December-1.0-72-arm64.dmg"
-                 sparkle:edSignature="qyRj9UMbs12t+cfCL5bhu07CL9bjDQlGa/1QGUtuMiQpXCSt0Opv/48cLIBChIUvFjLulpBvzQUuXBgJZkCHBg=="
-                 length="25165105"
+      <enclosure url="https://github.com/krl-sta/December-updates/releases/download/1.0.73/December-1.0-73-arm64.dmg"
+                 sparkle:edSignature="6E/RpXo8hBty9le+KyBMMvKKgjVWoOPbfpo0644GaUaR43aFgMdlM097Ek8Jk9Zwgx+4siOStrCWzieZxwLrCA=="
+                 length="24903299"
                  type="application/octet-stream" />
     </item>
   </channel>
