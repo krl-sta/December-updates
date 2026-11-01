@@ -6,18 +6,18 @@
     <description>December release feed</description>
     <language>en</language>
     <item>
-      <title>December 1.0 (74)</title>
-      <pubDate>Sat, 31 Oct 2026 20:27:26 +0000</pubDate>
-      <sparkle:version>74</sparkle:version>
+      <title>December 1.0 (75)</title>
+      <pubDate>Sun, 01 Nov 2026 12:11:47 +0000</pubDate>
+      <sparkle:version>75</sparkle:version>
       <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
       <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
       <description sparkle:format="markdown"><![CDATA[
 - Fixed a handful of bugs and made a few quiet improvements under the hood.
 ]]></description>
-      <enclosure url="https://github.com/krl-sta/December-updates/releases/download/1.0.74/December-1.0-74-arm64.dmg"
-                 sparkle:edSignature="Ec6yipjSjJ+OxIJNigUjxiILSqkhwJwutWpzyFnuYYOzAyzajZApPLVu/t5Fj1HjxNRIGGi43FiTUt16GbmaCw=="
-                 length="24904572"
+      <enclosure url="https://github.com/krl-sta/December-updates/releases/download/1.0.75/December-1.0-75-arm64.dmg"
+                 sparkle:edSignature="SeeLpnDtUj/L8NrdLtgWOS14ioRUdct8ba4gJCQMPJIpVK2NaJA7coYAklgRkGEd10TQfseMdCsbisp512pFBA=="
+                 length="24972372"
                  type="application/octet-stream" />
     </item>
   </channel>
