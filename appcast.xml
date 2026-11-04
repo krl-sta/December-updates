@@ -13,6 +13,16 @@
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
       <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
       <description sparkle:format="markdown"><![CDATA[
+### If you are on 1.0 (75), update by hand once
+
+Build 75 can't verify updates on its own — it refuses with "The update is improperly signed". Download the disk image, drag December into Applications and confirm the replacement:
+
+https://github.com/krl-sta/December-updates/releases/download/1.0.80/December-1.0-80-arm64.dmg
+
+Every update after this one installs itself.
+
+---
+
 - Pressing Space on a folder now shows how big it is, right in the size column.
 - One shortcut measures every folder in the pane — progress at the bottom, press it again to cancel. Assign it in Settings ▸ Shortcuts.
 - Quick Look reports a folder's total size, subfolders included.
