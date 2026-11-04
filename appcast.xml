@@ -6,23 +6,24 @@
     <description>December release feed</description>
     <language>en</language>
     <item>
-      <title>December 1.0 (75)</title>
-      <pubDate>Sun, 01 Nov 2026 12:11:47 +0000</pubDate>
-      <sparkle:version>75</sparkle:version>
+      <title>December 1.0 (80)</title>
+      <pubDate>Wed, 04 Nov 2026 01:52:35 +0000</pubDate>
+      <sparkle:version>80</sparkle:version>
       <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
       <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-      <description sparkle:format="markdown">
-- Moving a folder no longer leaves files behind or deletes things you didn't select.
-- Copying a file that already exists in the destination now asks instead of replacing it.
-- Cancelling a copy, an import or an archive actually stops it, and nothing half-written stays on disk.
-- Locked files copy again, and stay locked.
-- Importing can't write outside the folder you picked through a symlink.
-- Large uploads to cloud storage work again.
-</description>
-      <enclosure url="https://github.com/krl-sta/December-updates/releases/download/1.0.75/December-1.0-75-arm64.dmg"
-                 sparkle:edSignature="SeeLpnDtUj/L8NrdLtgWOS14ioRUdct8ba4gJCQMPJIpVK2NaJA7coYAklgRkGEd10TQfseMdCsbisp512pFBA=="
-                 length="24972372"
+      <description sparkle:format="markdown"><![CDATA[
+- Pressing Space on a folder now shows how big it is, right in the size column.
+- One shortcut measures every folder in the pane — progress at the bottom, press it again to cancel. Assign it in Settings ▸ Shortcuts.
+- Quick Look reports a folder's total size, subfolders included.
+- Settings ▸ Shortcuts: search, record a new key combination, clear it, or reset everything.
+- Opening a file from search now puts the cursor on that file instead of its folder.
+- Space opens a Markdown preview every time, not just sometimes.
+- Signed and notarized by Apple: no more "cannot be verified" warning, and folder access stops resetting after an update.
+]]></description>
+      <enclosure url="https://github.com/krl-sta/December-updates/releases/download/1.0.80/December-1.0-80-arm64.dmg"
+                 sparkle:edSignature="J22rHqreXJnNTX7kd3e74NCjpQzza8NBaUu7qrY5kwXgRFHnreQCwGBgIuTOBbnC2TFR9lMjGOPzGbEcCEMRCw=="
+                 length="25148390"
                  type="application/octet-stream" />
     </item>
   </channel>
