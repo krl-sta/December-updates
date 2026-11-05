@@ -6,36 +6,24 @@
     <description>December release feed</description>
     <language>en</language>
     <item>
-      <title>December 1.0 (83)</title>
-      <pubDate>Wed, 04 Nov 2026 16:42:15 +0000</pubDate>
-      <sparkle:version>83</sparkle:version>
+      <title>December 1.0 (85)</title>
+      <pubDate>Thu, 05 Nov 2026 17:27:23 +0000</pubDate>
+      <sparkle:version>85</sparkle:version>
       <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
       <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
       <description sparkle:format="markdown"><![CDATA[
 ## What's new
 
-- **Settings is now eight panes.** A sidebar with General, Appearance, Terminal,
-  Markdown, Cloud Storage, Coding Agents, AI and Shortcuts — no more one long
-  scroll. `⌘1` – `⌘8` switch between them, and the window remembers its size and
-  the pane you were last on.
-- **Edit in External Editor (F4).** F4 opens the selected files in the editor
-  chosen in Settings ▸ General. Visual Studio Code by default, any app via
-  "Choose…". Directories are skipped, and a missing editor says so instead of
-  opening the file in something else.
-- **⌘V works in Go to Folder.** An open command panel no longer counts as the
-  file list, so a path pastes normally. Paste as Move is refused while a panel
-  is in front, so a stray chord can no longer move files into the pane behind it.
-
-### Under the hood
-
-- Full Disk Access sits at the top of General, where a blocked app can find it,
-  instead of at the bottom of the list.
-- The file list keeps `⌘C` / `⌘X` / `⌘V` only while its own window is key.
+- **Directory tree in the sidebar** — one per window, folders only, like Total
+  Commander. Toggle with `⌘⇧E` or the button next to the traffic lights.
+- **The side mouse buttons now go back and forward** in the pane under the
+  pointer.
+- **Tab tooltips show their keyboard shortcuts.**
 ]]></description>
-      <enclosure url="https://github.com/krl-sta/December-updates/releases/download/1.0.83/December-1.0-83-arm64.dmg"
-                 sparkle:edSignature="1LSzfqX8U9Q6PuwHGA8BIkIJxwYxUoaBUKQkUd84dpM1bIbkA6OhstMyaq+OVKiEATJu4SrGt3+uCE65DZ+IDQ=="
-                 length="25191900"
+      <enclosure url="https://github.com/krl-sta/December-updates/releases/download/1.0.85/December-1.0-85-arm64.dmg"
+                 sparkle:edSignature="GUE5lXp3/BQUASfxmJcls0/9yF55DH52B8qGMwh5OXCHfdwnF0/WBYUMEjKnhsOBy6vfo/U13nVQiKfsvzwNCw=="
+                 length="25246699"
                  type="application/octet-stream" />
     </item>
   </channel>
