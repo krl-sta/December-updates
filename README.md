@@ -1,83 +1,25 @@
-<div align="center">
-
 # December
 
-**A dual-pane file manager for macOS, built for people who move files all day.**
+A dual-pane (two-panel) file manager for macOS: the Total Commander / Norton
+Commander interaction model, rebuilt natively in Swift and AppKit.
 
-Two panes, real keyboard control, a terminal where you need it, and nothing
-between you and the disk.
+Two independent panes with their own tabs and history, a directory tree, full
+keyboard control, a Ghostty terminal in the pane, Git status in the file list,
+and undo/redo for file operations.
 
-`macOS 15+` · `Apple silicon` · `notarized`
+`macOS 15+` · `Apple silicon` · `Developer ID signed and notarized` · `Sparkle updates`
 
-</div>
+**On this page:** [Install](#install) · [Feature map](#feature-map) ·
+[Keyboard reference](#keyboard-reference) ·
+[Coming from Total Commander](#coming-from-total-commander) ·
+[Settings](#settings) · [Where state lives](#where-state-lives) ·
+[Limits](#limits) · [Updates](#updates)
 
 ---
 
-## Why another file manager
-
-Finder is fine until you have to compare two folders, rename forty files, ship
-a build somewhere and clean up after it. Then you want the other kind of tool:
-two panes side by side, every action on a keyboard, and an undo button that
-actually puts things back.
-
-December is that tool, written natively in Swift and AppKit — no Electron, no
-web view pretending to be a file list.
-
-## What it does
-
-### Two panes, one keyboard
-
-- Independent panes, each with its own tabs, history and selection.
-- Back and forward per pane — on the toolbar, on `⌘←` / `⌘→`, or on the side
-  mouse buttons.
-- Open in Other Pane, Enclosing Folder, Go to Folder, Home, Root — one chord
-  each, with your own drive letters for the left and right pane.
-- Branch View flattens a whole subtree into one list when you need to see every
-  file at once.
-
-### A directory tree that follows you
-
-One tree per window, folders only, collapsed by default. It tracks whichever
-pane has the keyboard, opens a folder in that pane on a double-click, and loads
-one level at a time — a deep path costs nothing until you open it.
-
-### File operations you can take back
-
-- Copy, move, duplicate, compress, rename, new file and new folder — all with
-  `⌘Z`, and `⌘⇧Z` to redo. Undo restores what a move overwrote, not just the
-  fact that you moved something.
-- Paste as Move for the times you copied but meant to move.
-- Real progress, a queue that behaves when one item fails, and no silent
-  partial deletes.
-- Folder sizes on demand, not on every keystroke.
-
-### Look before you open
-
-- Quick View previews images, PDFs and text in place, and hands everything
-  else to Quick Look.
-- The Inspector shows permissions, dates, size, line endings and the Git diff
-  for the selection — and can make a file executable without a terminal.
-- Git status badges in the list, so a dirty file is obvious before you touch it.
-- Markdown files open in a built-in editor with formatting commands and a live
-  preview — `⌘S` saves, and the file list stays where it was.
-
-### A terminal in the pane
-
-A real terminal tab next to your files: `Toggle Terminal`, focus switching, its
-own font size, sessions across windows, and a command that syncs the shell to
-the pane's current directory. Coding agents can be launched straight from there.
-
-### Built to be lived in
-
-- Eight settings panes instead of one long scroll — General, Appearance,
-  Terminal, Markdown, Cloud Storage, Coding Agents, AI, Shortcuts.
-- Every shortcut is remappable, and conflicts are reported rather than ignored.
-- Light and dark themes that follow the system, with the accent colour you pick.
-- Remembers window size, tabs and pane paths between launches.
-
 ## Install
 
-**Homebrew** (recommended — updates itself afterwards):
+**Homebrew** — the cask keeps the app updated afterwards:
 
 ```bash
 brew trust krl-sta/tap
@@ -85,29 +27,170 @@ brew tap krl-sta/tap
 brew install --cask december
 ```
 
-**Direct download:** grab the latest DMG from
-[Releases](https://github.com/krl-sta/December-updates/releases/latest), open it
-and drag December to Applications. The app is signed with a Developer ID and
-notarized by Apple, so it launches without a warning.
+**Direct download:** take the DMG from the
+[latest release](https://github.com/krl-sta/December-updates/releases/latest),
+open it, drag **December** to `/Applications`. The bundle is signed with a
+Developer ID and notarized by Apple — no Gatekeeper warning.
+
+Requirements: **macOS 15 or later, Apple silicon**. There is no Intel build.
+
+On first launch December asks for **Full Disk Access**. Without it, folders such
+as `~/Library/Mail` and other apps' containers are invisible — the grant lives in
+System Settings ▸ Privacy & Security ▸ Full Disk Access, and the app links
+straight to that pane. Everything outside protected containers works without it.
+
+## Feature map
+
+| Area | What you get |
+|---|---|
+| **Panes** | Two independent panes, each with its own tabs, history and selection. `Tab` switches panes; `⌘⇧←` / `⌘⇧→` opens the selection in the other pane. |
+| **Navigation** | Back/forward per pane (`⌘←` / `⌘→`, toolbar buttons, mouse buttons 3 and 4), `Backspace` up, `⌘⇧G` Go to Folder, `⌘/` root, `⌘⇧H` home, `⌘⌥L` Downloads. Each pane can be bound to a drive (`⌘F1` / `⌘F2`). |
+| **Tabs** | Any number per pane: `⌘T` new, `⌘⌥T` reopen closed, `⌘Return` open in a new tab, `⌃Tab` / `⌃⇧Tab` cycle, `⌘1`–`⌘9` jump. |
+| **Directory tree** | One tree per window on the left, folders only, collapsed by default. Follows the pane that has keyboard focus, opens a folder in that pane on double-click, loads one level at a time, and centres the revealed row. `⌘⇧E`. |
+| **File operations** | Copy, move, rename, duplicate, compress to zip, new file, new folder, move to trash, delete permanently. A queue with progress, per-item failures that do not abort the batch, conflict prompts, and Paste as Move. |
+| **Undo / redo** | `⌘Z` / `⌘⇧Z` for copy, move, delete, duplicate, compress, rename, new file and new folder. Undo restores what a move overwrote. Local files only; history is per window and in memory. |
+| **Selection** | `⌥Space` toggles an item, `⌘A` all, `Esc` none, keypad `*` or `⌘⇧I` invert. |
+| **Search** | `⌘F` (or `⌘P`) fuzzy-finds files in the current folder; inside a document or the terminal the same key means Find in Document. `⌃B` Branch View flattens a whole subtree into one list (`⌃⇧B` includes directories). |
+| **Quick View** | `⌃Q` previews in place: text with wrapping, PDF, images, and anything else Quick Look can render. |
+| **Inspector** | `⌘I` shows permissions, dates, size, location, line endings and the Git diff for the selection; can make a file executable and open the enclosing repository. |
+| **Git** | Status badges in the file list, a repository watcher that refreshes them, and commit history plus diff for a selected file in the Inspector. |
+| **Terminal** | Ghostty-based terminal tabs inside the pane: `⌘⌥O` toggle, `⌘O` toggle focus, `⌘⇧T` open in the other pane, `⌘⌥J` sessions, zoom with `⌘=` / `⌘-` / `⌘0`. It syncs the shell to the pane's directory; `⌃Enter` inserts the selection as arguments, `⌘⇧C` copies the last command, `⌘⇧M` turns the output into Markdown, `⌘⇧S` saves it. |
+| **Coding agents** | `⌘E` launches Claude Code, Codex, Gemini CLI, Cursor, Aider or OpenCode in a terminal tab, scoped to the selection. |
+| **Markdown** | A built-in editor for `.md`: formatting (`⌘B`, `⌘I`, `⌘K` for links, code, quote, strikethrough), `⌘S` to save, `⌘⇧V` to toggle the rendered preview. `⌘J` rewrites the selection with an AI provider (Anthropic or OpenAI key in Settings). |
+| **Beyond the local disk** | S3-compatible object storage (AWS S3, Cloudflare R2, MinIO, Backblaze B2 and friends) mounts as a location you can browse, upload to and delete from. `.zip` archives open read-only, without unpacking first. |
+| **Favourites** | `⌘⇧D` pins the current folder, `⌃1`–`⌃9` jumps to a pinned folder, and a favourites bar can sit above the panes. |
+| **Command palette** | `⌘⇧P` runs any action by name; `⌘⇧/` shows the current keymap as a cheatsheet. |
+| **Folder sizes** | "Calculate All Folder Sizes" computes on demand — the list never blocks on `du` while you scroll. |
+
+## Keyboard reference
+
+Everything below is remappable in **Settings ▸ Shortcuts**, including multi-key
+chords; conflicts are reported instead of silently swallowing the second binding.
+
+**Navigation**
+
+| Key | Action |
+|---|---|
+| `Return` | Open selection |
+| `Backspace` | Enclosing folder |
+| `⌘←` / `⌘→` | Back / forward |
+| `⌘⇧H` / `⌘/` / `⌘⌥L` | Home / root / Downloads |
+| `⌘⇧G` | Go to Folder |
+| `Tab` | Switch pane |
+| `⌘⇧←` / `⌘⇧→` | Open selection in the other pane |
+| `⌘F1` / `⌘F2` (`⌥⌘1` / `⌥⌘2`) | Left / right pane drive |
+
+**Files**
+
+| Key | Action |
+|---|---|
+| `F4` | Edit in external editor |
+| `F5` | Copy to the other pane |
+| `F6` | Move to the other pane |
+| `⇧F6` | Rename |
+| `F7` / `⇧F7` | New folder / new file |
+| `F8` / `⌘⌫` | Move to trash |
+| `⇧F8` | Delete permanently |
+| `⌥F5` | Compress to zip |
+| `⌘D` | Duplicate |
+| `F12` / `⌘F12` | Copy folder path / file path |
+| `⌘⇧R` | Reveal in Finder |
+| `⌘Z` / `⌘⇧Z` | Undo / redo a file operation |
+
+**Selection and view**
+
+| Key | Action |
+|---|---|
+| `⌥Space` | Toggle item in selection |
+| `⌘A` / `Esc` | Select all / deselect |
+| `*` (keypad) or `⌘⇧I` | Invert selection |
+| `⌘⇧.` | Show hidden files (panes and tree together) |
+| `⌃B` / `⌃⇧B` | Branch view / branch view with directories |
+| `⌃D` | Cycle date sorting |
+| `⌃Q` | Quick View |
+| `⌘I` | Inspector |
+| `⌘⇧E` | Directory tree |
+
+**Tabs, terminal, agents**
+
+| Key | Action |
+|---|---|
+| `⌘T` / `⌘W` / `⌘⌥T` | New / close / reopen tab |
+| `⌃Tab` / `⌃⇧Tab` | Next / previous tab |
+| `⌘⌥O` / `⌘O` | Toggle terminal / toggle terminal focus |
+| `⌃⌘T` / `⌘⇧T` | New terminal tab / terminal in the other pane |
+| `⌘E` | Run a coding agent on the selection |
+| `⌘J` | Rewrite the Markdown selection with AI |
+
+The complete list is in Help ▸ Keyboard Shortcuts, or `⌘⇧/`.
+
+## Coming from Total Commander
+
+December keeps the Commander chords where macOS allows them, and offers a
+Finder-friendly alias where it does not (`⌘H` is Hide, so Home is `⌘⇧H`).
+
+| Total Commander | December |
+|---|---|
+| `Ctrl+T` new tab | `⌘T` |
+| `F3` view | `⌃Q` Quick View |
+| `F4` edit | `F4` |
+| `F5` copy | `F5` |
+| `F6` move | `F6` |
+| `F7` new folder | `F7` |
+| `F8` delete | `F8`, `⇧F8` for permanent |
+| `Ctrl+B` branch view | `⌃B` |
+| `Ctrl+Q` quick view panel | `⌃Q` (floating preview) |
+| `Ctrl+Enter` insert name into the command line | `⌃Enter` inserts into the terminal |
+| `Tab` switch panel | `Tab` |
+| `Ctrl+F1` / `Ctrl+F2` change drive | `⌘F1` / `⌘F2`, or `⌥⌘1` / `⌥⌘2` |
+| Separate tree | `⌘⇧E` — one tree per window, not one per pane |
+
+## Settings
+
+Eight panes, `⌘1`–`⌘8` to switch; window size and the last pane are remembered.
+
+**General** (default folder, confirmation before delete, Full Disk Access) ·
+**Appearance** (theme light/dark/system, file list font and size, Git badges,
+status marks) · **Terminal** (shell path, font and size, scrollback, bell) ·
+**Markdown** (editor font and size, default view) · **Cloud Storage**
+(S3-compatible connections) · **Coding Agents** (which agents are offered) ·
+**AI** (Anthropic / OpenAI keys for rewrite) · **Shortcuts** (the full keymap).
+
+## Where state lives
+
+- Settings and window state are stored in the app's `UserDefaults`, domain
+  `com.kirillstashevsky.december` — no database, no sidecar config files.
+- Window geometry, tabs, pane paths, tree width and visibility are restored on
+  launch. `defaults delete com.kirillstashevsky.december` resets everything.
+- Object storage credentials live in the same preferences and nowhere else.
+- December keeps no index and no database inside the folders you browse.
+
+## Limits
+
+Stated plainly, because they decide whether this is the right app for you:
+
+- **Apple silicon only**, macOS 15+. No Intel build.
+- **No SFTP, FTP, WebDAV or SMB browsing.** Remote work means S3-compatible
+  object storage; network shares are expected to be mounted by macOS.
+- **No folder compare or directory sync** between the two panes.
+- **Undo history is per window and in memory** — closing the window discards it.
+- **Archive support is read-only** and covers `.zip`.
+- **Source is private.** There is no build-from-source path; releases ship as
+  signed, notarized binaries.
 
 ## Updates
 
-December checks its own feed and offers new builds in-app. Release notes appear
-in the update alert, and nothing installs without your click.
+December updates through Sparkle 2 with an EdDSA-signed feed:
 
-- Latest version: [Releases](https://github.com/krl-sta/December-updates/releases/latest)
-- Feed: [appcast.xml](https://raw.githubusercontent.com/krl-sta/December-updates/main/appcast.xml)
+- Feed: <https://december-feed.k-stashevsky.workers.dev/appcast.xml>
+- Releases: <https://github.com/krl-sta/December-updates/releases>
 
-That update check is the only network traffic the app makes for itself — there
-is no analytics SDK and no telemetry.
-
-## Requirements
-
-- macOS 15 (Sequoia) or later
-- Apple silicon
+The update check is the app's only background network request — no analytics
+SDK, no telemetry, no account. Release notes appear in the update alert, and
+nothing installs without a click.
 
 ## About this repository
 
-Release artifacts and the Sparkle appcast live here so that December can fetch a
-feed and a DMG without authentication. The application source is private; issues
-and feedback are welcome in this repository.
+Release artifacts and the Sparkle appcast live here so the app can fetch a feed
+and a DMG without authentication. The source is private; bug reports and feature
+requests are welcome in this repository's issues.
