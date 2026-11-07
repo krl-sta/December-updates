@@ -6,24 +6,37 @@
     <description>December release feed</description>
     <language>en</language>
     <item>
-      <title>December 1.0 (85)</title>
-      <pubDate>Thu, 05 Nov 2026 17:27:23 +0000</pubDate>
-      <sparkle:version>85</sparkle:version>
+      <title>December 1.0 (97)</title>
+      <pubDate>Sat, 07 Nov 2026 13:27:59 +0000</pubDate>
+      <sparkle:version>97</sparkle:version>
       <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
       <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
       <description sparkle:format="markdown"><![CDATA[
 ## What's new
 
-- **Directory tree in the sidebar** — one per window, folders only, like Total
-  Commander. Toggle with `⌘⇧E` or the button next to the traffic lights.
-- **The side mouse buttons now go back and forward** in the pane under the
-  pointer.
-- **Tab tooltips show their keyboard shortcuts.**
+- **The directory tree no longer freezes.** Expanding a folder with thousands
+  of subfolders used to block the window for about half a second; 5 000 folders
+  now open in roughly 8 ms. Show hidden and refresh use the same path, so they
+  move too.
+- **The tree keeps its place.** Turning Show hidden off keeps the folders you
+  had open, and if the selected folder disappears the selection moves to its
+  parent instead of pointing at a row that is no longer there.
+- **Watched downloads, and ⌘J.** December notices when a browser drops a file
+  into a watched folder and rings one toast per burst; ⌘J jumps to the newest
+  download in the active pane. Settings ▸ General ▸ Downloads starts with
+  ~/Downloads and accepts extra folders — a second browser, a NAS, an external
+  drive.
+- **The opposite pane's terminal opens in that pane's folder**, not wherever the
+  terminal last was.
+- **The Inspector toggle sits in the title bar** and collapses the panel for
+  real, so the file list gets the width back.
+- **iCloud Drive documents go to the Trash properly**, through the provider that
+  owns them, instead of failing with "you don't have permission".
 ]]></description>
-      <enclosure url="https://github.com/krl-sta/December-updates/releases/download/1.0.85/December-1.0-85-arm64.dmg"
-                 sparkle:edSignature="GUE5lXp3/BQUASfxmJcls0/9yF55DH52B8qGMwh5OXCHfdwnF0/WBYUMEjKnhsOBy6vfo/U13nVQiKfsvzwNCw=="
-                 length="25246699"
+      <enclosure url="https://github.com/krl-sta/December-updates/releases/download/1.0.97/December-1.0-97-arm64.dmg"
+                 sparkle:edSignature="t5YobUlPrm1NgHvFqlIC0SbnzmKyxEr4WOhMKATjQF06M14gePN43lhTX0AXm26gzEChGd7IPHZU1tDpM8KXCQ=="
+                 length="25303614"
                  type="application/octet-stream" />
     </item>
   </channel>
