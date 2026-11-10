@@ -6,37 +6,34 @@
     <description>December release feed</description>
     <language>en</language>
     <item>
-      <title>December 1.0 (97)</title>
-      <pubDate>Sat, 07 Nov 2026 13:27:59 +0000</pubDate>
-      <sparkle:version>97</sparkle:version>
+      <title>December 1.0 (112)</title>
+      <pubDate>Tue, 10 Nov 2026 20:27:13 +0000</pubDate>
+      <sparkle:version>112</sparkle:version>
       <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
       <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
       <description sparkle:format="markdown"><![CDATA[
 ## What's new
 
-- **The directory tree no longer freezes.** Expanding a folder with thousands
-  of subfolders used to block the window for about half a second; 5 000 folders
-  now open in roughly 8 ms. Show hidden and refresh use the same path, so they
-  move too.
-- **The tree keeps its place.** Turning Show hidden off keeps the folders you
-  had open, and if the selected folder disappears the selection moves to its
-  parent instead of pointing at a row that is no longer there.
-- **Watched downloads, and ⌘J.** December notices when a browser drops a file
-  into a watched folder and rings one toast per burst; ⌘J jumps to the newest
-  download in the active pane. Settings ▸ General ▸ Downloads starts with
-  ~/Downloads and accepts extra folders — a second browser, a NAS, an external
-  drive.
-- **The opposite pane's terminal opens in that pane's folder**, not wherever the
-  terminal last was.
-- **The Inspector toggle sits in the title bar** and collapses the panel for
-  real, so the file list gets the width back.
-- **iCloud Drive documents go to the Trash properly**, through the provider that
-  owns them, instead of failing with "you don't have permission".
+- **Archives open like folders.** Zip, tar (plain or gzip/bzip2/xz/zstd) and 7z
+  open in the pane with the usual sidebar, breadcrumbs and back/forward, and
+  stepping out puts the cursor back on the archive. Zip and tar are writable:
+  create folders and files, rename, delete and drag files in; 7z stays read-only.
+- **Git lives in the status bar.** The branch chip names the current branch and
+  tints it by status. Its menu shows tracking (`main · ↑2 ↓1`), local and remote
+  branches grouped by remote — read-only, nothing is checked out — opens the
+  repository on GitHub, copies the remote URL or commit SHA, fetches, and can
+  fast-forward pull after a confirmation.
+- **F4 and Open With work again.** December no longer forwards an inherited shell
+  variable that made VS Code and other Electron apps exit a fraction of a second
+  after opening a file.
+- **⌘J follows a downloaded archive after it expands.** The folder the browser
+  turned the archive into counts as the arrival, including app packages and slow
+  expansions, instead of jumping to the previous download.
 ]]></description>
-      <enclosure url="https://github.com/krl-sta/December-updates/releases/download/1.0.97/December-1.0-97-arm64.dmg"
-                 sparkle:edSignature="t5YobUlPrm1NgHvFqlIC0SbnzmKyxEr4WOhMKATjQF06M14gePN43lhTX0AXm26gzEChGd7IPHZU1tDpM8KXCQ=="
-                 length="25303614"
+      <enclosure url="https://github.com/krl-sta/December-updates/releases/download/1.0.112/December-1.0-112-arm64.dmg"
+                 sparkle:edSignature="VsjqO4v15UZvFnT+iITzQJLhBaDFYGvqpG5umHdY12/5EWQbFcLUdqyxJFlDiWy2VljySCeKo83yGaAr5jlnCQ=="
+                 length="25417069"
                  type="application/octet-stream" />
     </item>
   </channel>
