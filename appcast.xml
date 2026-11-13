@@ -6,34 +6,30 @@
     <description>December release feed</description>
     <language>en</language>
     <item>
-      <title>December 1.0 (112)</title>
-      <pubDate>Tue, 10 Nov 2026 20:27:13 +0000</pubDate>
-      <sparkle:version>112</sparkle:version>
+      <title>December 1.0 (113)</title>
+      <pubDate>Fri, 13 Nov 2026 18:57:51 +0000</pubDate>
+      <sparkle:version>113</sparkle:version>
       <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
       <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
       <description sparkle:format="markdown"><![CDATA[
 ## What's new
 
-- **Archives open like folders.** Zip, tar (plain or gzip/bzip2/xz/zstd) and 7z
-  open in the pane with the usual sidebar, breadcrumbs and back/forward, and
-  stepping out puts the cursor back on the archive. Zip and tar are writable:
-  create folders and files, rename, delete and drag files in; 7z stays read-only.
-- **Git lives in the status bar.** The branch chip names the current branch and
-  tints it by status. Its menu shows tracking (`main · ↑2 ↓1`), local and remote
-  branches grouped by remote — read-only, nothing is checked out — opens the
-  repository on GitHub, copies the remote URL or commit SHA, fetches, and can
-  fast-forward pull after a confirmation.
-- **F4 and Open With work again.** December no longer forwards an inherited shell
-  variable that made VS Code and other Electron apps exit a fraction of a second
-  after opening a file.
-- **⌘J follows a downloaded archive after it expands.** The folder the browser
-  turned the archive into counts as the arrival, including app packages and slow
-  expansions, instead of jumping to the previous download.
+- **A newer terminal engine.** The embedded terminal now runs on Ghostty 1.4.0:
+  better scrollback and memory use, more reliable redraws, and a long list of
+  fixes for full-screen programs, tmux and Kitty graphics.
+- **Links open only where they should.** A link printed by a program can no
+  longer launch a local file or a custom URL handler through December. Web and
+  mail links open in the usual apps; file links are revealed in the file pane
+  instead, and other schemes are ignored.
+- **Drops are safer.** File drops still paste shell-quoted paths without
+  pressing Enter, but now go through the terminal's protected paste. Text and
+  image drops use the same path, and December records the drop as input so
+  prompt-safety stays correct.
 ]]></description>
-      <enclosure url="https://github.com/krl-sta/December-updates/releases/download/1.0.112/December-1.0-112-arm64.dmg"
-                 sparkle:edSignature="VsjqO4v15UZvFnT+iITzQJLhBaDFYGvqpG5umHdY12/5EWQbFcLUdqyxJFlDiWy2VljySCeKo83yGaAr5jlnCQ=="
-                 length="25417069"
+      <enclosure url="https://github.com/krl-sta/December-updates/releases/download/1.0.113/December-1.0-113-arm64.dmg"
+                 sparkle:edSignature="9rw6jd0DAXgWsNWBE8fUAZmvwAq9RB+OhrZaZhhTtMMBEi2ts8GwqhiZX4K8ktOqyQxP2YqBdTzVksB5ju5hCg=="
+                 length="25869203"
                  type="application/octet-stream" />
     </item>
   </channel>
