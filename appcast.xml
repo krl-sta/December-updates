@@ -6,16 +6,16 @@
     <description>December release feed</description>
     <language>en</language>
     <item>
-      <title>December 1.0 (113)</title>
-      <pubDate>Fri, 13 Nov 2026 18:57:51 +0000</pubDate>
-      <sparkle:version>113</sparkle:version>
+      <title>December 1.0 (114)</title>
+      <pubDate>Fri, 13 Nov 2026 19:20:35 +0000</pubDate>
+      <sparkle:version>114</sparkle:version>
       <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
       <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
       <description sparkle:format="markdown"><![CDATA[
 ## What's new
 
-- **A newer terminal engine.** The embedded terminal now runs on Ghostty 1.4.0:
+- **A newer terminal engine.** The embedded terminal runs on Ghostty 1.4.0:
   better scrollback and memory use, more reliable redraws, and a long list of
   fixes for full-screen programs, tmux and Kitty graphics.
 - **Links open only where they should.** A link printed by a program can no
@@ -26,10 +26,13 @@
   pressing Enter, but now go through the terminal's protected paste. Text and
   image drops use the same path, and December records the drop as input so
   prompt-safety stays correct.
+- **The download carries its own ticket.** The app inside the disk image is
+  now notarized and stapled separately, so macOS can verify it offline after
+  an update or if you move it out of the image.
 ]]></description>
-      <enclosure url="https://github.com/krl-sta/December-updates/releases/download/1.0.113/December-1.0-113-arm64.dmg"
-                 sparkle:edSignature="9rw6jd0DAXgWsNWBE8fUAZmvwAq9RB+OhrZaZhhTtMMBEi2ts8GwqhiZX4K8ktOqyQxP2YqBdTzVksB5ju5hCg=="
-                 length="25869203"
+      <enclosure url="https://github.com/krl-sta/December-updates/releases/download/1.0.114/December-1.0-114-arm64.dmg"
+                 sparkle:edSignature="SQhCuJcWp91ZCd3oxm4xeeLtwSlI0wM6qI4+4FUN5IEgRUl4T2+K3Ir7YnmPtMSm3AGxVqhTa6llnLX7RXqaDw=="
+                 length="25873925"
                  type="application/octet-stream" />
     </item>
   </channel>
